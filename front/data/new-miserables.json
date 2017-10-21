@@ -1,50 +1,18 @@
-defaultdict(<class 'list'>, {'salavat': ['moscow'], 'omsk': ['samara', 'kazan'], 'saint-petersburg': ['nizhny-novgorod'], 'kondrovo': ['anapa'], 'bataysk': ['kolomna'], 'noviy-urengoy': ['minusinsk'], 'verhnyaya-pyshma': ['nizhny-novgorod'], 'kazan': ['samara'], 'arzamas': ['ramenskoe'], 'chehov': ['rostov-na-donu'], 'elabuga': ['noginsk'], 'rybinsk': ['ufa'], 'moscow': ['kotlas', 'novokuibishevsk', 'saint-petersburg', 'nizhny-novgorod'], 'chelyabinsk': ['irkutsk', 'saint-petersburg']})
-{'salavat': {'novokuibishevsk', 'kotlas', 'nizhny-novgorod', 'moscow', 'saint-petersburg'}, 'moscow': {'novokuibishevsk', 'kotlas', 'nizhny-novgorod', 'saint-petersburg'}, 'omsk': {'kazan', 'samara'}, 'chehov': {'rostov-na-donu'}, 'kondrovo': {'anapa'}, 'bataysk': {'kolomna'}, 'verhnyaya-pyshma': {'nizhny-novgorod'}, 'kazan': {'samara'}, 'arzamas': {'ramenskoe'}, 'saint-petersburg': {'nizhny-novgorod'}, 'elabuga': {'noginsk'}, 'rybinsk': {'ufa'}, 'noviy-urengoy': {'minusinsk'}, 'chelyabinsk': {'irkutsk', 'nizhny-novgorod', 'saint-petersburg'}} {'salavat': 0, 'omsk': 2, 'saint-petersburg': 9, 'kondrovo': 4, 'bataysk': 5, 'noviy-urengoy': 12, 'verhnyaya-pyshma': 6, 'kazan': 7, 'arzamas': 8, 'chehov': 3, 'elabuga': 10, 'rybinsk': 11, 'moscow': 1, 'chelyabinsk': 13}
 [
     {
         "coords": [
             [
-                55.149851,
-                37.466997
+                66.083963,
+                76.680974
             ],
             [
-                47.222531,
-                39.718705
+                53.710564,
+                91.687268
             ]
         ],
-        "group": 3,
-        "source": "chehov",
-        "target": "rostov-na-donu"
-    },
-    {
-        "coords": [
-            [
-                54.80743,
-                35.926647
-            ],
-            [
-                44.894997,
-                37.316259
-            ]
-        ],
-        "group": 4,
-        "source": "kondrovo",
-        "target": "anapa"
-    },
-    {
-        "coords": [
-            [
-                55.386666,
-                43.815687
-            ],
-            [
-                55.567321,
-                38.225804
-            ]
-        ],
-        "group": 8,
-        "source": "arzamas",
-        "target": "ramenskoe"
+        "group": 10,
+        "source": "noviy-urengoy",
+        "target": "minusinsk"
     },
     {
         "coords": [
@@ -57,24 +25,9 @@ defaultdict(<class 'list'>, {'salavat': ['moscow'], 'omsk': ['samara', 'kazan'],
                 44.005986
             ]
         ],
-        "group": 6,
+        "group": 13,
         "source": "verhnyaya-pyshma",
         "target": "nizhny-novgorod"
-    },
-    {
-        "coords": [
-            [
-                47.138235,
-                39.750748
-            ],
-            [
-                55.09524,
-                38.765224
-            ]
-        ],
-        "group": 5,
-        "source": "bataysk",
-        "target": "kolomna"
     },
     {
         "coords": [
@@ -87,24 +40,24 @@ defaultdict(<class 'list'>, {'salavat': ['moscow'], 'omsk': ['samara', 'kazan'],
                 37.620393
             ]
         ],
-        "group": 0,
+        "group": 4,
         "source": "salavat",
         "target": "moscow"
     },
     {
         "coords": [
             [
-                58.048454,
-                38.858433
+                47.138235,
+                39.750748
             ],
             [
-                54.735147,
-                55.958727
+                55.09524,
+                38.765224
             ]
         ],
-        "group": 11,
-        "source": "rybinsk",
-        "target": "ufa"
+        "group": 12,
+        "source": "bataysk",
+        "target": "kolomna"
     },
     {
         "coords": [
@@ -117,9 +70,39 @@ defaultdict(<class 'list'>, {'salavat': ['moscow'], 'omsk': ['samara', 'kazan'],
                 38.441058
             ]
         ],
-        "group": 10,
+        "group": 0,
         "source": "elabuga",
         "target": "noginsk"
+    },
+    {
+        "coords": [
+            [
+                44.894997,
+                37.316259
+            ],
+            [
+                54.80743,
+                35.926647
+            ]
+        ],
+        "group": 5,
+        "source": "anapa",
+        "target": "kondrovo"
+    },
+    {
+        "coords": [
+            [
+                58.048454,
+                38.858433
+            ],
+            [
+                54.735147,
+                55.958727
+            ]
+        ],
+        "group": 6,
+        "source": "rybinsk",
+        "target": "ufa"
     },
     {
         "coords": [
@@ -132,24 +115,9 @@ defaultdict(<class 'list'>, {'salavat': ['moscow'], 'omsk': ['samara', 'kazan'],
                 50.101819
             ]
         ],
-        "group": 7,
+        "group": 8,
         "source": "kazan",
         "target": "samara"
-    },
-    {
-        "coords": [
-            [
-                55.75396,
-                37.620393
-            ],
-            [
-                61.25297,
-                46.633217
-            ]
-        ],
-        "group": 1,
-        "source": "moscow",
-        "target": "kotlas"
     },
     {
         "coords": [
@@ -162,7 +130,7 @@ defaultdict(<class 'list'>, {'salavat': ['moscow'], 'omsk': ['samara', 'kazan'],
                 49.947767
             ]
         ],
-        "group": 1,
+        "group": 3,
         "source": "moscow",
         "target": "novokuibishevsk"
     },
@@ -177,7 +145,7 @@ defaultdict(<class 'list'>, {'salavat': ['moscow'], 'omsk': ['samara', 'kazan'],
                 30.315868
             ]
         ],
-        "group": 1,
+        "group": 3,
         "source": "moscow",
         "target": "saint-petersburg"
     },
@@ -192,7 +160,7 @@ defaultdict(<class 'list'>, {'salavat': ['moscow'], 'omsk': ['samara', 'kazan'],
                 44.005986
             ]
         ],
-        "group": 1,
+        "group": 3,
         "source": "moscow",
         "target": "nizhny-novgorod"
     },
@@ -207,7 +175,7 @@ defaultdict(<class 'list'>, {'salavat': ['moscow'], 'omsk': ['samara', 'kazan'],
                 104.28066
             ]
         ],
-        "group": 13,
+        "group": 9,
         "source": "chelyabinsk",
         "target": "irkutsk"
     },
@@ -222,24 +190,54 @@ defaultdict(<class 'list'>, {'salavat': ['moscow'], 'omsk': ['samara', 'kazan'],
                 30.315868
             ]
         ],
-        "group": 13,
+        "group": 9,
         "source": "chelyabinsk",
         "target": "saint-petersburg"
     },
     {
         "coords": [
             [
-                66.083963,
-                76.680974
+                55.149851,
+                37.466997
             ],
             [
-                53.710564,
-                91.687268
+                47.222531,
+                39.718705
             ]
         ],
-        "group": 12,
-        "source": "noviy-urengoy",
-        "target": "minusinsk"
+        "group": 1,
+        "source": "chehov",
+        "target": "rostov-na-donu"
+    },
+    {
+        "coords": [
+            [
+                61.25297,
+                46.633217
+            ],
+            [
+                55.75396,
+                37.620393
+            ]
+        ],
+        "group": 14,
+        "source": "kotlas",
+        "target": "moscow"
+    },
+    {
+        "coords": [
+            [
+                55.386666,
+                43.815687
+            ],
+            [
+                55.567321,
+                38.225804
+            ]
+        ],
+        "group": 2,
+        "source": "arzamas",
+        "target": "ramenskoe"
     },
     {
         "coords": [
@@ -252,7 +250,7 @@ defaultdict(<class 'list'>, {'salavat': ['moscow'], 'omsk': ['samara', 'kazan'],
                 50.101819
             ]
         ],
-        "group": 2,
+        "group": 11,
         "source": "omsk",
         "target": "samara"
     },
@@ -267,7 +265,7 @@ defaultdict(<class 'list'>, {'salavat': ['moscow'], 'omsk': ['samara', 'kazan'],
                 49.106324
             ]
         ],
-        "group": 2,
+        "group": 11,
         "source": "omsk",
         "target": "kazan"
     },
@@ -282,7 +280,7 @@ defaultdict(<class 'list'>, {'salavat': ['moscow'], 'omsk': ['samara', 'kazan'],
                 44.005986
             ]
         ],
-        "group": 9,
+        "group": 7,
         "source": "saint-petersburg",
         "target": "nizhny-novgorod"
     }
