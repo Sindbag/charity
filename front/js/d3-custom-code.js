@@ -13,7 +13,7 @@ const simulation = d3.forceSimulation()
 
 const err = d3.select('#error-message');
 
-d3.json("/data/data.json", function(error, graph) {
+d3.json("/charity/front/data/data.json", function(error, graph) {
   if (error) {
       console.log(error);
       err.append('p').text(error);

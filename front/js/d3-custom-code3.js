@@ -100,11 +100,11 @@ function update() {
 }
 
 
-d3.json('/data/new-dcities.json', function (err, json2) {
+d3.json('/charity/front/data/new-dcities.json', function (err, json2) {
     if (err) throw err;
     cities = json2;
 
-    d3.json('/data/new-miserables.json', function (err, invalidJSON) {
+    d3.json('/charity/front/data/new-miserables.json', function (err, invalidJSON) {
         if (err) throw err;
         connects = invalidJSON;
 

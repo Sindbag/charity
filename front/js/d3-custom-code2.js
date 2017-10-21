@@ -76,7 +76,7 @@ point.append("text")
 
 const err = d3.select('#error-message');
 
-d3.json("/data/world-50m.json", function(error, world) {
+d3.json("/charity/front/data/world-50m.json", function(error, world) {
   if (error) {
       console.log(error);
       err.append('p').text(error);
