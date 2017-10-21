@@ -1,7 +1,7 @@
 import pickle
 import json
 
-vk_fliends = pickle.load(open('pickled-data/vk_friends.pickle', 'rb'))
+vk_friends = pickle.load(open('pickled-data/vk_friends.pickle', 'rb'))
 vk_posts = pickle.load(open('pickled-data/vk_posts.pickle', 'rb'))
 
 # find first post for user
@@ -17,7 +17,7 @@ for k, post in vk_posts.items():
 links = []
 for user, post in first_posts.items():
     dt = post['date']
-    for friend in vk_fliends[str(user)]:
+    for friend in vk_friends[str(user)]:
         if friend in first_posts and first_posts[friend]['date'] > dt:
             links.append((user, friend))
 
@@ -25,11 +25,10 @@ points = []
 for i, j in links:
     points.append(i)
     points.append(j)
-#print(links)
 
 data = {
-    "nodes": [{"id": p, "group": 1} for p in points],
-    "links": [{"source": i, "target": j, "value": 1} for i, j in links]
+    "nodes": [{"id": str(user), "group": 1} for user in first_posts],
+    "links": [{"source": str(i), "target": str(j), "value": 3} for i, j in links] #+ [{"source": str(points[0]), "target": str(i), "value": 3} for i in points]
 }
 
-print(json.dumps(data))
+print(json.dumps(data, indent=4, sort_keys=True))
