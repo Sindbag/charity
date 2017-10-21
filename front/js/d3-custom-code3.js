@@ -1,31 +1,24 @@
-const svg = d3.select("#svg-container");
+let svg = d3.select("#svg-container");
 let width = svg.node().getBoundingClientRect().width,
     height = svg.node().getBoundingClientRect().height;
 
-let geojson, cities, connects, projection;
+svg = d3.select("#svg-container")
+    .attr("width", width)
+    .attr("height", height);
+
+let cities, connects, projection;
 
 let tile = d3.tile()
     .size([width, height]);
-
-const state = {
-    type: 'Mercator',
-    scale: 290,
-    translateX: width / 2 - 300,
-    translateY: height / 2 + 380,
-    centerLon: 0,
-    centerLat: 0,
-    rotateLambda: 0,
-    rotatePhi: 0,
-    rotateGamma: 0
-};
 
 const pi = Math.PI,
     tau = 2 * pi;
 
 // Update projection
-projection = d3['geo' + state.type]()
+projection = d3.geoMercator()
     .scale(1 / tau)
     .translate([0, 0]);
+
 const geoGenerator = d3.geoPath()
     .projection(projection);
 
@@ -34,7 +27,8 @@ const color = d3.scaleOrdinal(d3.schemeCategory20);
 const geoCircle = d3.geoCircle().radius(0.3).precision(1);
 
 const zoom = d3.zoom()
-    .scaleExtent([1 << 4, 1 << 24])
+    .scaleExtent([1 << 11, 1 << 14])
+    // .translateExtent([[-100, -100], [width + 90, height + 100]])
     .on("zoom", zoomed);
 
 const raster = d3.select('g.map').append('g');
@@ -42,26 +36,14 @@ const circles = d3.select('.circles');
 const lines = d3.select('.lines');
 const grat = d3.select('.graticule');
 
+geoGenerator.projection(projection);
 function update() {
-
-  geoGenerator.projection(projection);
-
-  projection
-    .scale(state.scale)
-    .translate([state.translateX, state.translateY])
-    .center([state.centerLon, state.centerLat])
-    .rotate([state.rotateLambda, state.rotatePhi, state.rotateGamma]);
+  // projection
+  //   .scale(state.scale)
+  //   .translate([state.translateX, state.translateY])
+  //   .center([state.centerLon, state.centerLat])
+  //   .rotate([state.rotateLambda, state.rotatePhi, state.rotateGamma]);
     // .fitExtent([[0, 0], [width, height]], geojson);
-
-  // // Update world map
-  // let u = d3.select('g.map')
-  //   .selectAll('path')
-  //   .data(geojson.features);
-
-  // u.enter()
-  //   .append('path')
-  //   .merge(u)
-  //   .attr('d', geoGenerator);
 
   // Update graticule
   grat
@@ -103,12 +85,11 @@ function update() {
       .append('path')
       .merge(u)
       .attr("d", geoGenerator)
-      // .attr('fill', d => color(+d.group))
-      .attr('stroke', function (d) { return color(d.group); });
+      .attr('stroke', function (d) { return color(+d.group); });
 
   // Compute the projected initial center.
-  let center = projection([-98.5, 39.5]);
-
+  let center = projection([37.5, 55.4]);
+  //
   // Apply a zoom transform equivalent to projection.{scale,translate,center}.
   svg
       .call(zoom)
@@ -119,37 +100,35 @@ function update() {
 }
 
 
-d3.json('/data/world.geo.json', function(err, json) {
+d3.json('/data/new-dcities.json', function (err, json2) {
     if (err) throw err;
-    geojson = json;
+    cities = json2;
 
-    d3.json('/data/dcities.json', function (err, json2) {
+    d3.json('/data/new-miserables.json', function (err, invalidJSON) {
         if (err) throw err;
-        cities = json2;
+        connects = invalidJSON;
 
-        d3.json('/data/new-miserables.json', function (err, invalidJSON) {
-            if (err) throw err;
-            connects = invalidJSON;
-
-            update();
-        });
+        update();
     });
 });
 
 function zoomed() {
   const transform = d3.event.transform;
   const tiles = tile
-      .translate(projection.translate())
       .scale(transform.k)
+      .translate([transform.x, transform.y])
       ();
-  console.log(projection.translate());
+
   projection
       .scale(transform.k / tau)
-      // .translate([transform.x, transform.y]);
+      .translate([transform.x, transform.y]);
 
-  circles.selectAll('path').attr("d", geoGenerator);
-  lines.selectAll('path').attr("d", geoGenerator);
-  grat.select('path').attr("d", geoGenerator);
+  circles.selectAll('path')
+      .attr("d", geoGenerator);
+  lines.selectAll('path')
+      .attr("d", geoGenerator);
+  grat.select('path')
+      .attr("d", geoGenerator);
 
   let image = raster
       .attr("transform", stringify(tiles.scale, tiles.translate))
