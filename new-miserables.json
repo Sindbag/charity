@@ -1,287 +1,289 @@
-[
-    {
-        "coords": [
-            [
-                55.149851,
-                37.466997
+{
+    "links": [
+        {
+            "coords": [
+                [
+                    52.286387,
+                    104.28066
+                ],
+                [
+                    55.160026,
+                    61.40259
+                ]
             ],
-            [
-                47.222531,
-                39.718705
-            ]
-        ],
-        "group": 1,
-        "source": "chehov",
-        "target": "rostov-na-donu"
-    },
-    {
-        "coords": [
-            [
-                55.386666,
-                43.815687
+            "group": 1,
+            "source": "irkutsk",
+            "target": "chelyabinsk"
+        },
+        {
+            "coords": [
+                [
+                    56.975804,
+                    60.564955
+                ],
+                [
+                    56.326887,
+                    44.005986
+                ]
             ],
-            [
-                55.567321,
-                38.225804
-            ]
-        ],
-        "group": 1,
-        "source": "arzamas",
-        "target": "ramenskoe"
-    },
-    {
-        "coords": [
-            [
-                56.975804,
-                60.564955
+            "group": 1,
+            "source": "verhnyaya-pyshma",
+            "target": "nizhny-novgorod"
+        },
+        {
+            "coords": [
+                [
+                    53.361694,
+                    55.924627
+                ],
+                [
+                    55.75396,
+                    37.620393
+                ]
             ],
-            [
-                56.326887,
-                44.005986
-            ]
-        ],
-        "group": 1,
-        "source": "verhnyaya-pyshma",
-        "target": "nizhny-novgorod"
-    },
-    {
-        "coords": [
-            [
-                47.138235,
-                39.750748
+            "group": 1,
+            "source": "salavat",
+            "target": "moscow"
+        },
+        {
+            "coords": [
+                [
+                    47.138235,
+                    39.750748
+                ],
+                [
+                    55.09524,
+                    38.765224
+                ]
             ],
-            [
-                55.09524,
-                38.765224
-            ]
-        ],
-        "group": 1,
-        "source": "bataysk",
-        "target": "kolomna"
-    },
-    {
-        "coords": [
-            [
-                53.361694,
-                55.924627
+            "group": 1,
+            "source": "bataysk",
+            "target": "kolomna"
+        },
+        {
+            "coords": [
+                [
+                    55.75667,
+                    52.05446
+                ],
+                [
+                    55.855537,
+                    38.441058
+                ]
             ],
-            [
-                55.75396,
-                37.620393
-            ]
-        ],
-        "group": 1,
-        "source": "salavat",
-        "target": "moscow"
-    },
-    {
-        "coords": [
-            [
-                58.048454,
-                38.858433
+            "group": 1,
+            "source": "elabuga",
+            "target": "noginsk"
+        },
+        {
+            "coords": [
+                [
+                    55.149851,
+                    37.466997
+                ],
+                [
+                    47.222531,
+                    39.718705
+                ]
             ],
-            [
-                54.735147,
-                55.958727
-            ]
-        ],
-        "group": 1,
-        "source": "rybinsk",
-        "target": "ufa"
-    },
-    {
-        "coords": [
-            [
-                55.75667,
-                52.05446
+            "group": 1,
+            "source": "chehov",
+            "target": "rostov-na-donu"
+        },
+        {
+            "coords": [
+                [
+                    58.048454,
+                    38.858433
+                ],
+                [
+                    54.735147,
+                    55.958727
+                ]
             ],
-            [
-                55.855537,
-                38.441058
-            ]
-        ],
-        "group": 1,
-        "source": "elabuga",
-        "target": "noginsk"
-    },
-    {
-        "coords": [
-            [
-                55.798551,
-                49.106324
+            "group": 1,
+            "source": "rybinsk",
+            "target": "ufa"
+        },
+        {
+            "coords": [
+                [
+                    55.798551,
+                    49.106324
+                ],
+                [
+                    53.195522,
+                    50.101819
+                ]
             ],
-            [
-                53.195522,
-                50.101819
-            ]
-        ],
-        "group": 1,
-        "source": "kazan",
-        "target": "samara"
-    },
-    {
-        "coords": [
-            [
-                55.75396,
-                37.620393
+            "group": 1,
+            "source": "kazan",
+            "target": "samara"
+        },
+        {
+            "coords": [
+                [
+                    55.75396,
+                    37.620393
+                ],
+                [
+                    53.099469,
+                    49.947767
+                ]
             ],
-            [
-                53.099469,
-                49.947767
-            ]
-        ],
-        "group": 1,
-        "source": "moscow",
-        "target": "novokuibishevsk"
-    },
-    {
-        "coords": [
-            [
-                55.75396,
-                37.620393
+            "group": 1,
+            "source": "moscow",
+            "target": "novokuibishevsk"
+        },
+        {
+            "coords": [
+                [
+                    55.75396,
+                    37.620393
+                ],
+                [
+                    55.030199,
+                    82.92043
+                ]
             ],
-            [
-                55.030199,
-                82.92043
-            ]
-        ],
-        "group": 1,
-        "source": "moscow",
-        "target": "novosibirsk"
-    },
-    {
-        "coords": [
-            [
-                55.75396,
-                37.620393
+            "group": 1,
+            "source": "moscow",
+            "target": "novosibirsk"
+        },
+        {
+            "coords": [
+                [
+                    55.75396,
+                    37.620393
+                ],
+                [
+                    56.326887,
+                    44.005986
+                ]
             ],
-            [
-                56.326887,
-                44.005986
-            ]
-        ],
-        "group": 1,
-        "source": "moscow",
-        "target": "nizhny-novgorod"
-    },
-    {
-        "coords": [
-            [
-                44.894997,
-                37.316259
+            "group": 1,
+            "source": "moscow",
+            "target": "nizhny-novgorod"
+        },
+        {
+            "coords": [
+                [
+                    44.894997,
+                    37.316259
+                ],
+                [
+                    54.80743,
+                    35.926647
+                ]
             ],
-            [
-                54.80743,
-                35.926647
-            ]
-        ],
-        "group": 1,
-        "source": "anapa",
-        "target": "kondrovo"
-    },
-    {
-        "coords": [
-            [
-                55.160026,
-                61.40259
+            "group": 1,
+            "source": "anapa",
+            "target": "kondrovo"
+        },
+        {
+            "coords": [
+                [
+                    55.160026,
+                    61.40259
+                ],
+                [
+                    55.030199,
+                    82.92043
+                ]
             ],
-            [
-                52.286387,
-                104.28066
-            ]
-        ],
-        "group": 1,
-        "source": "chelyabinsk",
-        "target": "irkutsk"
-    },
-    {
-        "coords": [
-            [
-                55.160026,
-                61.40259
+            "group": 1,
+            "source": "chelyabinsk",
+            "target": "novosibirsk"
+        },
+        {
+            "coords": [
+                [
+                    61.25297,
+                    46.633217
+                ],
+                [
+                    55.75396,
+                    37.620393
+                ]
             ],
-            [
-                55.030199,
-                82.92043
-            ]
-        ],
-        "group": 1,
-        "source": "chelyabinsk",
-        "target": "novosibirsk"
-    },
-    {
-        "coords": [
-            [
-                61.25297,
-                46.633217
+            "group": 1,
+            "source": "kotlas",
+            "target": "moscow"
+        },
+        {
+            "coords": [
+                [
+                    66.083963,
+                    76.680974
+                ],
+                [
+                    53.710564,
+                    91.687268
+                ]
             ],
-            [
-                55.75396,
-                37.620393
-            ]
-        ],
-        "group": 1,
-        "source": "kotlas",
-        "target": "moscow"
-    },
-    {
-        "coords": [
-            [
-                66.083963,
-                76.680974
+            "group": 1,
+            "source": "noviy-urengoy",
+            "target": "minusinsk"
+        },
+        {
+            "coords": [
+                [
+                    55.386666,
+                    43.815687
+                ],
+                [
+                    55.567321,
+                    38.225804
+                ]
             ],
-            [
-                53.710564,
-                91.687268
-            ]
-        ],
-        "group": 1,
-        "source": "noviy-urengoy",
-        "target": "minusinsk"
-    },
-    {
-        "coords": [
-            [
-                55.030199,
-                82.92043
+            "group": 1,
+            "source": "arzamas",
+            "target": "ramenskoe"
+        },
+        {
+            "coords": [
+                [
+                    54.989342,
+                    73.368212
+                ],
+                [
+                    53.195522,
+                    50.101819
+                ]
             ],
-            [
-                56.326887,
-                44.005986
-            ]
-        ],
-        "group": 1,
-        "source": "novosibirsk",
-        "target": "nizhny-novgorod"
-    },
-    {
-        "coords": [
-            [
-                54.989342,
-                73.368212
+            "group": 1,
+            "source": "omsk",
+            "target": "samara"
+        },
+        {
+            "coords": [
+                [
+                    54.989342,
+                    73.368212
+                ],
+                [
+                    55.798551,
+                    49.106324
+                ]
             ],
-            [
-                53.195522,
-                50.101819
-            ]
-        ],
-        "group": 1,
-        "source": "omsk",
-        "target": "samara"
-    },
-    {
-        "coords": [
-            [
-                54.989342,
-                73.368212
+            "group": 1,
+            "source": "omsk",
+            "target": "kazan"
+        },
+        {
+            "coords": [
+                [
+                    55.030199,
+                    82.92043
+                ],
+                [
+                    56.326887,
+                    44.005986
+                ]
             ],
-            [
-                55.798551,
-                49.106324
-            ]
-        ],
-        "group": 1,
-        "source": "omsk",
-        "target": "kazan"
-    }
-]
+            "group": 1,
+            "source": "novosibirsk",
+            "target": "nizhny-novgorod"
+        }
+    ]
+}
