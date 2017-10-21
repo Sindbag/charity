@@ -1,18 +1,35 @@
+defaultdict(<class 'list'>, {'salavat': ['moscow'], 'omsk': ['samara', 'kazan'], 'saint-petersburg': ['nizhny-novgorod'], 'kondrovo': ['anapa'], 'bataysk': ['kolomna'], 'noviy-urengoy': ['minusinsk'], 'verhnyaya-pyshma': ['nizhny-novgorod'], 'kazan': ['samara'], 'arzamas': ['ramenskoe'], 'chehov': ['rostov-na-donu'], 'elabuga': ['noginsk'], 'rybinsk': ['ufa'], 'moscow': ['kotlas', 'novokuibishevsk', 'saint-petersburg', 'nizhny-novgorod'], 'chelyabinsk': ['irkutsk', 'saint-petersburg']})
+{'salavat': {'novokuibishevsk', 'kotlas', 'nizhny-novgorod', 'moscow', 'saint-petersburg'}, 'moscow': {'novokuibishevsk', 'kotlas', 'nizhny-novgorod', 'saint-petersburg'}, 'omsk': {'kazan', 'samara'}, 'chehov': {'rostov-na-donu'}, 'kondrovo': {'anapa'}, 'bataysk': {'kolomna'}, 'verhnyaya-pyshma': {'nizhny-novgorod'}, 'kazan': {'samara'}, 'arzamas': {'ramenskoe'}, 'saint-petersburg': {'nizhny-novgorod'}, 'elabuga': {'noginsk'}, 'rybinsk': {'ufa'}, 'noviy-urengoy': {'minusinsk'}, 'chelyabinsk': {'irkutsk', 'nizhny-novgorod', 'saint-petersburg'}} {'salavat': 0, 'omsk': 2, 'saint-petersburg': 9, 'kondrovo': 4, 'bataysk': 5, 'noviy-urengoy': 12, 'verhnyaya-pyshma': 6, 'kazan': 7, 'arzamas': 8, 'chehov': 3, 'elabuga': 10, 'rybinsk': 11, 'moscow': 1, 'chelyabinsk': 13}
 [
     {
         "coords": [
             [
-                52.286387,
-                104.28066
+                55.149851,
+                37.466997
             ],
             [
-                55.160026,
-                61.40259
+                47.222531,
+                39.718705
             ]
         ],
-        "group": 1,
-        "source": "irkutsk",
-        "target": "chelyabinsk"
+        "group": 3,
+        "source": "chehov",
+        "target": "rostov-na-donu"
+    },
+    {
+        "coords": [
+            [
+                54.80743,
+                35.926647
+            ],
+            [
+                44.894997,
+                37.316259
+            ]
+        ],
+        "group": 4,
+        "source": "kondrovo",
+        "target": "anapa"
     },
     {
         "coords": [
@@ -25,7 +42,7 @@
                 38.225804
             ]
         ],
-        "group": 1,
+        "group": 8,
         "source": "arzamas",
         "target": "ramenskoe"
     },
@@ -40,24 +57,9 @@
                 44.005986
             ]
         ],
-        "group": 1,
+        "group": 6,
         "source": "verhnyaya-pyshma",
         "target": "nizhny-novgorod"
-    },
-    {
-        "coords": [
-            [
-                53.361694,
-                55.924627
-            ],
-            [
-                55.75396,
-                37.620393
-            ]
-        ],
-        "group": 1,
-        "source": "salavat",
-        "target": "moscow"
     },
     {
         "coords": [
@@ -70,9 +72,24 @@
                 38.765224
             ]
         ],
-        "group": 1,
+        "group": 5,
         "source": "bataysk",
         "target": "kolomna"
+    },
+    {
+        "coords": [
+            [
+                53.361694,
+                55.924627
+            ],
+            [
+                55.75396,
+                37.620393
+            ]
+        ],
+        "group": 0,
+        "source": "salavat",
+        "target": "moscow"
     },
     {
         "coords": [
@@ -85,7 +102,7 @@
                 55.958727
             ]
         ],
-        "group": 1,
+        "group": 11,
         "source": "rybinsk",
         "target": "ufa"
     },
@@ -100,7 +117,7 @@
                 38.441058
             ]
         ],
-        "group": 1,
+        "group": 10,
         "source": "elabuga",
         "target": "noginsk"
     },
@@ -115,7 +132,7 @@
                 50.101819
             ]
         ],
-        "group": 1,
+        "group": 7,
         "source": "kazan",
         "target": "samara"
     },
@@ -182,17 +199,17 @@
     {
         "coords": [
             [
-                44.894997,
-                37.316259
+                55.160026,
+                61.40259
             ],
             [
-                54.80743,
-                35.926647
+                52.286387,
+                104.28066
             ]
         ],
-        "group": 1,
-        "source": "anapa",
-        "target": "kondrovo"
+        "group": 13,
+        "source": "chelyabinsk",
+        "target": "irkutsk"
     },
     {
         "coords": [
@@ -205,24 +222,9 @@
                 30.315868
             ]
         ],
-        "group": 1,
+        "group": 13,
         "source": "chelyabinsk",
         "target": "saint-petersburg"
-    },
-    {
-        "coords": [
-            [
-                55.149851,
-                37.466997
-            ],
-            [
-                47.222531,
-                39.718705
-            ]
-        ],
-        "group": 1,
-        "source": "chehov",
-        "target": "rostov-na-donu"
     },
     {
         "coords": [
@@ -235,24 +237,9 @@
                 91.687268
             ]
         ],
-        "group": 1,
+        "group": 12,
         "source": "noviy-urengoy",
         "target": "minusinsk"
-    },
-    {
-        "coords": [
-            [
-                59.939095,
-                30.315868
-            ],
-            [
-                56.326887,
-                44.005986
-            ]
-        ],
-        "group": 1,
-        "source": "saint-petersburg",
-        "target": "nizhny-novgorod"
     },
     {
         "coords": [
@@ -265,7 +252,7 @@
                 50.101819
             ]
         ],
-        "group": 1,
+        "group": 2,
         "source": "omsk",
         "target": "samara"
     },
@@ -280,8 +267,23 @@
                 49.106324
             ]
         ],
-        "group": 1,
+        "group": 2,
         "source": "omsk",
         "target": "kazan"
+    },
+    {
+        "coords": [
+            [
+                59.939095,
+                30.315868
+            ],
+            [
+                56.326887,
+                44.005986
+            ]
+        ],
+        "group": 9,
+        "source": "saint-petersburg",
+        "target": "nizhny-novgorod"
     }
 ]
