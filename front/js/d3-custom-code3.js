@@ -37,14 +37,9 @@ const lines = d3.select('.lines');
 const grat = d3.select('.graticule');
 
 geoGenerator.projection(projection);
-function update() {
-  // projection
-  //   .scale(state.scale)
-  //   .translate([state.translateX, state.translateY])
-  //   .center([state.centerLon, state.centerLat])
-  //   .rotate([state.rotateLambda, state.rotatePhi, state.rotateGamma]);
-    // .fitExtent([[0, 0], [width, height]], geojson);
 
+
+function update() {
   // Update graticule
   grat
     .datum(graticule())
@@ -55,9 +50,9 @@ function update() {
     .selectAll('path')
     .data(cities.map(function(d) {
           geoCircle.center([d.lng, d.lat]).radius(d.rad / 30000);
-
           let tmp = geoCircle();
           tmp['group'] = d.group;
+          tmp['name'] = d.cnm;
           return tmp;
         })
     );
@@ -66,7 +61,14 @@ function update() {
     .append('path')
     .merge(u)
     .attr('d', geoGenerator)
-    .attr("fill", function(d) { return color(d.group); });
+    .attr("fill", function(d) { return color(d.group); })
+    .attr('data-toggle', 'modal')
+    .attr('data-target', '#exampleModal')
+    .attr('data-name', d => d.name)
+    .attr('data-count', d => d.groud)
+    // .on('click', d => handleMouseClick(d))
+    .append("svg:title")
+    .text(function(d, i) { return d.name});
 
   // update lines
   u = lines
@@ -76,7 +78,10 @@ function update() {
             group: d.group,
             type: 'Feature', geometry: {
                 type: 'LineString',
-                coordinates: [d.coords[1].reverse(), d.coords[0].reverse()]
+                coordinates: [
+                    d.coords[1].reverse(),
+                    d.coords[0].reverse()
+                ]
             }
         };
     }));
@@ -151,3 +156,14 @@ function stringify(scale, translate) {
   let k = scale / 256, r = scale % 1 ? Number : Math.round;
   return "translate(" + r(translate[0] * scale) + "," + r(translate[1] * scale) + ") scale(" + k + ")";
 }
+
+$('#exampleModal').on('show.bs.modal', function (event) {
+  let button = $(event.relatedTarget); // Button that triggered the modal
+  let city = button.data('name'); // Extract info from data-* attributes
+  let count = button.data('count'); // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  let modal = $(this);
+  modal.find('.modal-title').text('Благотворительность в городе ' + city);
+  modal.find('#modalData').html('Ого: ' + count)
+});
