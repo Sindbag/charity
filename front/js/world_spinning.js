@@ -90,11 +90,7 @@ function update(cities, connects) {
             .data(connects);
 
         up = u.enter()
-            .append('path');
-        up
-            .interrupt().transition()
-            .duration(1000).ease(d3.easeLinear);
-        up
+            .append('path')
             .merge(u)
             .attr("d", geoGenerator)
             .attr('stroke', function (d) {
@@ -174,12 +170,12 @@ function perform_updates(cts, cnts) {
     fun();
 }
 
-setInterval(rotate, 100);
+setInterval(rotate, 20);
 
 let yaw = 300;
 function rotate() {
   projection.rotate([yaw, -45]);
-  yaw -= 1;
+  yaw -= 0.1;
 
   circles.selectAll('path')
       .attr("d", geoGenerator);

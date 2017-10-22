@@ -66,7 +66,9 @@
     <div class="col-md-12">
       <div id="error-message">
         <h2>Charity Graph</h2>
-        <p>This thing exists to make you happy!</p>
+        <p>This project exists to make you happy!</p>
+        <p>Out goal is to make people more close to each other, and also more open-minded and generous!</p>
+        <span id="vkbutton"></span>
       </div><!-- /#error-message -->
     </div><!-- /.col-md-12 -->
   </div><!-- /.row -->
@@ -85,5 +87,11 @@
 <script src="//d3js.org/topojson.v1.min.js"></script>
 <script src="/charity/front/js/world_spinning.js"></script>
 <script type="text/javascript" src="//vk.com/js/api/share.js?93"></script>
+<script>$("#vkbutton").html(VK.Share.button({
+          url: 'http://localhost?description=Я увидел у своего друга, что тот решгил признаться в благотврительности, потому что увидел у своего друга похожий пост',
+          title: 'Я участвую в благотворительности!',
+          description: 'Я увидел у своего друга, что тот решгил признаться в благотврительности, потому что увидел у своего друга похожий пост',
+          image: 'https://blago.ru/files/images/photo_1479392499_w260.jpg'
+        }, {type: 'link', text: 'Признаться в благотворительности'}));</script>
 </body>
 </html>
