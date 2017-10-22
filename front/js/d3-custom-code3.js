@@ -6,7 +6,7 @@ svg = d3.select("#svg-container")
     .attr("width", width)
     .attr("height", height);
 
-let cities, connects, projection;
+let projection;
 
 let tile = d3.tile()
     .size([width, height]);
@@ -39,7 +39,7 @@ const grat = d3.select('.graticule');
 geoGenerator.projection(projection);
 
 
-function update() {
+function update(cities, connects) {
   // Update graticule
   grat
     .datum(graticule())
@@ -57,8 +57,13 @@ function update() {
         })
     );
 
-  u.enter()
+  let up = u.enter()
     .append('path')
+    .attr('opacity', 0);
+  up
+    .transition().duration(600)
+    .attr("opacity", 1);
+  up
     .merge(u)
     .attr('d', geoGenerator)
     .attr("fill", function(d) { return color(d.group); })
@@ -66,16 +71,69 @@ function update() {
     .attr('data-target', '#exampleModal')
     .attr('data-name', d => d.name)
     .attr('data-count', d => d.groud)
-    // .on('click', d => handleMouseClick(d))
     .append("svg:title")
     .text(function(d, i) { return d.name});
 
   // update lines
   u = lines
     .selectAll('path')
-    .data(connects.map(function(d) {
+    .data(connects);
+
+  let line = d3.line()
+    .x(d => d.coords[0])
+    .y(d => d.coords[1]);
+
+  up = u.enter()
+    .append('path');
+  up
+      .interrupt().transition()
+      .duration(1000).ease(d3.easeLinear);
+  up
+    .merge(u)
+    .attr("d", geoGenerator)
+    .attr('stroke', function (d) {
+        return color(+d.group);
+    });
+  // Compute the projected initial center.
+  let center = projection([37.5, 55.4]);
+  //
+  // Apply a zoom transform equivalent to projection.{scale,translate,center}.
+  if (!called) {
+      svg
+          .call(zoom)
+          .call(zoom.transform, d3.zoomIdentity
+              .translate(width / 2, height / 2)
+              .scale(1 << 12)
+              .translate(-center[0], -center[1]));
+      called = true;
+  }
+}
+
+let called = false;
+
+
+d3.json('/charity/front/data/new-dcities.json', function (err, json2) {
+    if (err) throw err;
+    let cities = json2;
+
+    d3.json('/charity/front/data/new-miserables.json', function (err, invalidJSON) {
+        if (err) throw err;
+        let connects = invalidJSON;
+
+        perform_updates(cities, connects);
+    });
+});
+
+function perform_updates(cts, cnts) {
+    let used = [],
+        used_ct = [],
+        used_cn = [];
+    i = 0;
+    cnts = cnts.map(function (d) {
         return {
             group: d.group,
+            source: d.source,
+            target: d.target,
             type: 'Feature', geometry: {
                 type: 'LineString',
                 coordinates: [
@@ -84,38 +142,29 @@ function update() {
                 ]
             }
         };
-    }));
+    });
 
-  u.enter()
-      .append('path')
-      .merge(u)
-      .attr("d", geoGenerator)
-      .attr('stroke', function (d) { return color(+d.group); });
+    function fun () {
+        if (i >= cts.length) return -1;
 
-  // Compute the projected initial center.
-  let center = projection([37.5, 55.4]);
-  //
-  // Apply a zoom transform equivalent to projection.{scale,translate,center}.
-  svg
-      .call(zoom)
-      .call(zoom.transform, d3.zoomIdentity
-          .translate(width / 2, height / 2)
-          .scale(1 << 12)
-          .translate(-center[0], -center[1]));
+        ct = cts[i];
+
+        used.push(ct.cid);
+        used_ct.push(ct);
+        let tmp = cnts.filter(cn => (used.indexOf(cn.source) > -1
+            && used.indexOf(cn.target) > -1
+            && used_cn.indexOf(cn) === -1));
+
+        used_cn = used_cn.concat(tmp);
+
+        update(used_ct, used_cn);
+        i += 1;
+
+        setTimeout(() => fun(), 100);
+    }
+    fun();
 }
 
-
-d3.json('/charity/front/data/new-dcities.json', function (err, json2) {
-    if (err) throw err;
-    cities = json2;
-
-    d3.json('/charity/front/data/new-miserables.json', function (err, invalidJSON) {
-        if (err) throw err;
-        connects = invalidJSON;
-
-        update();
-    });
-});
 
 function zoomed() {
   const transform = d3.event.transform;
@@ -152,10 +201,12 @@ function zoomed() {
       .attr("height", 256);
 }
 
+
 function stringify(scale, translate) {
   let k = scale / 256, r = scale % 1 ? Number : Math.round;
   return "translate(" + r(translate[0] * scale) + "," + r(translate[1] * scale) + ") scale(" + k + ")";
 }
+
 
 $('#exampleModal').on('show.bs.modal', function (event) {
   let button = $(event.relatedTarget); // Button that triggered the modal
