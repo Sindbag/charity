@@ -208,7 +208,7 @@ function stringify(scale, translate) {
 }
 
 
-$('#exampleModal').on('show.bs.modal', function (event) {
+$('#charityModal').on('show.bs.modal', function (event) {
   let button = $(event.relatedTarget); // Button that triggered the modal
   let city = button.data('name'); // Extract info from data-* attributes
   let count = button.data('count'); // Extract info from data-* attributes
