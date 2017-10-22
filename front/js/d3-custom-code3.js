@@ -68,7 +68,7 @@ function update(cities, connects) {
     .attr('d', geoGenerator)
     .attr("fill", function(d) { return color(d.group); })
     .attr('data-toggle', 'modal')
-    .attr('data-target', '#exampleModal')
+    .attr('data-target', '#charityModal')
     .attr('data-name', d => d.name)
     .attr('data-count', d => d.groud)
     .append("svg:title")

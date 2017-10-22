@@ -36,13 +36,13 @@ def generate_clusters(num, data):
     d = list(data.items())
     for i in range(num):
         random.shuffle(d)
-        cluster = d[:random.randint(20, len(d) // 2)]
+        cluster = d[:random.randint(5, len(d) // 100)]
         d = d[random.randint(0, len(cluster)):]
         clusters.append(cluster)
     return clusters
 
 
-cities_big = json.loads('front/data/cities_big.json')
+cities_big = json.loads(open('front/data/cities_big.json').read())
 
 
 clusters = generate_clusters(14, cities_big)

@@ -27,7 +27,7 @@ const color = d3.scaleOrdinal(d3.schemeCategory20);
 const geoCircle = d3.geoCircle().radius(0.3).precision(1);
 
 const zoom = d3.zoom()
-    .scaleExtent([1 << 11, 1 << 14])
+    .scaleExtent([1 << 9, 1 << 14])
     .on("zoom", zoomed);
 
 const raster = d3.select('g.map').append('g');
@@ -67,7 +67,7 @@ function update(cities, connects) {
     .attr('d', geoGenerator)
     .attr("fill", function(d) { return color(d.group); })
     .attr('data-toggle', 'modal')
-    .attr('data-target', '#exampleModal')
+    .attr('data-target', '#charityModal')
     .attr('data-name', d => d.name)
     .attr('data-count', d => d.groud)
     .append("svg:title")
