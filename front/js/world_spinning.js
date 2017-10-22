@@ -27,7 +27,7 @@ const color = d3.scaleOrdinal(d3.schemeCategory20);
 const geoCircle = d3.geoCircle().radius(0.3).precision(1);
 
 const zoom = d3.zoom()
-    .scaleExtent([1 << 11, 1 << 14])
+    .scaleExtent([1 << 8, 1 << 14])
     // .translateExtent([[-100, -100], [width + 90, height + 100]])
     .on("zoom", zoomed);
 

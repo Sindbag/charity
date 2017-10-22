@@ -112,11 +112,11 @@ function update(cities, connects) {
 let called = false;
 
 
-d3.json('/charity/front/data/new-dcities.json', function (err, json2) {
+d3.json('/charity/front/data/ruc.json', function (err, json2) {
     if (err) throw err;
     let cities = json2;
 
-    d3.json('/charity/front/data/new-miserables.json', function (err, invalidJSON) {
+    d3.json('/charity/front/data/rul.json', function (err, invalidJSON) {
         if (err) throw err;
         let connects = invalidJSON;
 
