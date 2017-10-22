@@ -31,11 +31,14 @@
         </li>
         <!-- menu item 2 -->
         <li class="nav-item">
-          <a class="nav-link" href="/charity/front/final.html">Russia</a>
+          <a class="nav-link" href="/charity/front/russia.html">Russia</a>
         </li>
         <!-- menu item 3 -->
         <li class="nav-item">
           <a class="nav-link" href="/charity/front/final2.html">Global Graph</a>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-default" href="#">Sing Up</button>
         </li>
       </ul>
     </div><!-- /.collapse -->
@@ -108,5 +111,11 @@
 <script src="//d3js.org/topojson.v1.min.js"></script>
 <script src="/charity/front/js/world.js"></script>
 <script type="text/javascript" src="//vk.com/js/api/share.js?93"></script>
+<script>$("#vkbutton").html(VK.Share.button({
+          url: 'http://localhost?description=Я увидел у своего друга, что тот решгил признаться в благотврительности, потому что увидел у своего друга похожий пост',
+          title: 'Я участвую в благотворительности!',
+          description: 'Я увидел у своего друга, что тот решгил признаться в благотврительности, потому что увидел у своего друга похожий пост',
+          image: 'https://blago.ru/files/images/photo_1479392499_w260.jpg'
+        }, {type: 'link', text: 'Признаться в благотворительности'}));</script>
 </body>
 </html>

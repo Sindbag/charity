@@ -66,7 +66,7 @@ function update(cities, connects) {
   up
     .merge(u)
     .attr('d', geoGenerator)
-    .attr("fill", function(d) { return color(d.group); })
+    .attr("fill", function(d) { return color(+d.group); })
     .attr('data-toggle', 'modal')
     .attr('data-target', '#charityModal')
     .attr('data-name', d => d.name)
@@ -122,6 +122,29 @@ d3.json('/charity/front/data/ruc.json', function (err, json2) {
 
         perform_updates(cities, connects);
     });
+    function compareNumeric(a, b) {
+      if (a > b) return -1;
+      if (a < b) return 1;
+    }
+    d3.json('/charity/front/data/users.json', function (err, users) {
+        if (err) throw err;
+        users.sort((a, b) => compareNumeric(+a.count, +b.count));
+        users = users.slice(0, 35);
+        users.map(u => {
+            let bg = u.count === 952 ? 'background: #ffe2b2; border-radius: 10px;' : '';
+            let button = bg && VK.Share.button({
+          url: 'http://localhost?description=Я увидел у своего друга, что тот решгил признаться в благотврительности, потому что увидел у своего друга похожий пост',
+          title: 'Я участвую в благотворительности!',
+          description: 'Я увидел у своего друга, что тот решгил признаться в благотврительности, потому что увидел у своего друга похожий пост',
+          image: 'https://blago.ru/files/images/photo_1479392499_w260.jpg'
+        }, {type: 'link', text: 'Признаться'});
+            $("#charityModal").find(".modal-body .form-group").append(
+                '<div class="row" style="margin: 10px 0; '
+                + bg + '"><div class="col-4"><img class="img-circle" height=100 width=100 src="'
+                + u.avatar + '"/></div><div class="col-5">'
+                + `${u.first_name} ${u.last_name}` + '</div><div class="col-2">' + u.count + button + '</div></div>');
+        })
+    })
 });
 
 function perform_updates(cts, cnts) {
@@ -216,5 +239,5 @@ $('#charityModal').on('show.bs.modal', function (event) {
   // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
   let modal = $(this);
   modal.find('.modal-title').text('Благотворительность в городе ' + city);
-  modal.find('#modalData').html('Ого: ' + count)
+  modal.find('#modalData').html(`<h3>Ого, в этом городе уже пожертвовали 217 человек на сумму $7,483</h3>`)
 });

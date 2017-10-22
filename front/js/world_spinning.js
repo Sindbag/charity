@@ -219,15 +219,3 @@ function stringify(scale, translate) {
   let k = scale / 256, r = scale % 1 ? Number : Math.round;
   return "translate(" + r(translate[0] * scale) + "," + r(translate[1] * scale) + ") scale(" + k + ")";
 }
-
-
-$('#charityModal').on('show.bs.modal', function (event) {
-  let button = $(event.relatedTarget); // Button that triggered the modal
-  let city = button.data('name'); // Extract info from data-* attributes
-  let count = button.data('count'); // Extract info from data-* attributes
-  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-  let modal = $(this);
-  modal.find('.modal-title').text('Благотворительность в городе ' + city);
-  modal.find('#modalData').html('Ого: ' + count)
-});
