@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Charity Graph</title>
+<!-- bootstrap css -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<!-- custom css -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="container">
+  <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+    <!-- toggle button -->
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- brand -->
+    <a class="navbar-brand" href="#">Charity Graph</a>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <!-- menu -->
+      <ul class="navbar-nav">
+        <!-- menu item 1 -->
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <!-- menu item 2 -->
+        <li class="nav-item">
+          <a class="nav-link" href="/mapped.html">Mappings</a>
+        </li>
+        <!-- menu item 3 -->
+        <li class="nav-item">
+          <a class="nav-link" href="/final.html">Graph</a>
+        </li>
+      </ul>
+    </div><!-- /.collapse -->
+  </nav>
+</div><!-- /.container -->
+
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-12">
+          <svg id="svg-container">
+            <g class="graticule"><path></path></g>
+            <g class="map"></g>
+            <g class="lines"></g>
+            <g class="circles"></g>
+          </svg>
+      <!--<svg id="content">-->
+
+      <!--</svg>&lt;!&ndash; /#svg-container &ndash;&gt;-->
+    </div><!-- /.col-md-12 -->
+  </div><!-- /.row -->
+
+  <div class="row">
+    <div class="col-md-12">
+      <div id="error-message">
+        <h2>Charity Graph</h2>
+        <p>This thing exists to make you happy!</p>
+      </div><!-- /#error-message -->
+    </div><!-- /.col-md-12 -->
+  </div><!-- /.row -->
+</div><!-- /.container -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <p contenteditable="true" id="modalData"></p>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.modal -->
+
+<!-- jquery -->
+<script src="/charity/front/js/jquery.min.js"></script>
+<!-- tether -->
+<script src="/charity/front/js/tether.min.js"></script>
+<!-- bootstrap -->
+<script src="/charity/front/js/bootstrap.min.js"></script>
+<!-- d3.js -->
+<script src="//d3js.org/d3.v4.min.js"></script>
+<script src="//d3js.org/d3-tile.v0.0.min.js"></script>
+<script src="//d3js.org/topojson.v1.min.js"></script>
+<script src="/charity/front/js/world.js"></script>
+</body>
+</html>
