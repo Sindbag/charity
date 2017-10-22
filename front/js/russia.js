@@ -39,6 +39,17 @@ const grat = d3.select('.graticule');
 geoGenerator.projection(projection);
 
 
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+
 function update(cities, connects) {
   // Update graticule
   grat
@@ -66,7 +77,19 @@ function update(cities, connects) {
   up
     .merge(u)
     .attr('d', geoGenerator)
-    .attr("fill", function(d) { return color(+d.group); })
+    .attr("fill", function(d) {
+        let c;
+        if (getParameterByName('name')) {
+            if (typeof d.group === undefined || d.group > 0) {
+                c = 0;
+            } else {
+                c = 2;
+            }
+        } else {
+            c = d.group;
+        }
+        return color(c);
+    })
     .attr('data-toggle', 'modal')
     .attr('data-target', '#charityModal')
     .attr('data-name', d => d.name)
@@ -92,7 +115,17 @@ function update(cities, connects) {
     .merge(u)
     .attr("d", geoGenerator)
     .attr('stroke', function (d) {
-        return color(+d.group);
+        let c;
+        if (getParameterByName('name')) {
+            if (typeof d.group === undefined || d.group > 0) {
+                c = 0;
+            } else {
+                c = 3;
+            }
+        } else {
+            c = d.group;
+        }
+        return color(c);
     });
   // Compute the projected initial center.
   let center = projection([37.5, 55.4]);
